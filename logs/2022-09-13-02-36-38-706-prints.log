@@ -1,0 +1,5 @@
+02:36:41.750 [main] DEBUG tests.LoginTest - browser launced
+02:36:47.239 [main] DEBUG tests.LoginTest - url opened
+02:36:47.240 [main] DEBUG tests.LoginTest - checking for Broken links and printing to file
+02:36:47.240 [main] DEBUG tests.LoginTest - Check complete for Broken links and printed to file > Links_Update.txt
+02:36:58.005 [main] DEBUG tests.TwoTest - Log of twoTest
