@@ -31,7 +31,7 @@ public class Listeners extends Base implements ITestListener {
 	public void onTestSuccess(ITestResult result) {
 		extentTest.pass("passed");
 		//extentTestThread.get().pass("passed");
-
+		System.out.println();
 		
 		WebDriver driver = null;
 		
