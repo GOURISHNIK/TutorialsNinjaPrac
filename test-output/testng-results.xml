@@ -2,20 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-13T10:15:28 IST" name="Suite" finished-at="2022-09-13T10:15:40 IST" duration-ms="12063">
+  <suite started-at="2022-09-14T21:16:43 IST" name="Suite" finished-at="2022-09-14T21:16:44 IST" duration-ms="75">
     <groups>
     </groups>
-    <test started-at="2022-09-13T10:15:28 IST" name="Test" finished-at="2022-09-13T10:15:40 IST" duration-ms="12063">
-      <class name="tests.TwoTest">
-        <test-method signature="twoTest()[pri:0, instance:tests.TwoTest@3148f668]" started-at="2022-09-13T10:15:28 IST" name="twoTest" finished-at="2022-09-13T10:15:39 IST" duration-ms="11189" status="PASS">
+    <test started-at="2022-09-14T21:16:43 IST" name="Test" finished-at="2022-09-14T21:16:44 IST" duration-ms="75">
+      <class name="tests.Para">
+        <test-method signature="name()[pri:0, instance:tests.Para@34f5090e]" started-at="2022-09-14T21:16:44 IST" name="name" finished-at="2022-09-14T21:16:44 IST" duration-ms="14" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- twoTest -->
-        <test-method is-config="true" signature="closingBrowser()[pri:0, instance:tests.TwoTest@3148f668]" started-at="2022-09-13T10:15:39 IST" name="closingBrowser" finished-at="2022-09-13T10:15:40 IST" duration-ms="229" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closingBrowser -->
-      </class> <!-- tests.TwoTest -->
+        </test-method> <!-- name -->
+      </class> <!-- tests.Para -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

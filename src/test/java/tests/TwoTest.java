@@ -21,6 +21,8 @@ public class TwoTest extends Base {
 	Logger logger;
 	@Test
 	public void twoTest() throws InterruptedException, IOException {
+		
+		
 		driver = initializeDriver();
 		
 		logger = LogManager.getLogger(TwoTest.class.getName());

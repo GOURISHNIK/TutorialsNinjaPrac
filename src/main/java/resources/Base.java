@@ -19,6 +19,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -36,7 +37,8 @@ public class Base {
 	public Properties prop;
 	
 	 
-	public WebDriver initializeDriver() throws IOException {
+	public WebDriver initializeDriver() throws IOException, InterruptedException {
+		
 		
 		prop = new Properties();
 		String propPath = System.getProperty("user.dir")+"\\src\\main\\java\\resources\\data.properties";
@@ -44,6 +46,9 @@ public class Base {
 		
 		prop.load(fis);
 		String browserName = prop.getProperty("browser");
+		
+		//String browserName = System.getProperty("browser1");
+		
 		
 		if(browserName.equalsIgnoreCase("chrome")) {
 			
@@ -56,6 +61,7 @@ public class Base {
 			driver = new FirefoxDriver();
 			
 		}else if (browserName.equalsIgnoreCase("IE")) {
+			
 		
 			WebDriverManager.iedriver().setup();
 			driver = new InternetExplorerDriver();
@@ -76,6 +82,8 @@ public class Base {
 		
 		File SourceFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String destinationFilePath = "./reports/screenshots/"+testName+".png";
+		String NEWiMAGEpATH = "http://localhost:8080/job/ToDel/ws/reports/screenshots/"+testName+".png";
+		
 		FileUtils.copyFile(SourceFile,new File(destinationFilePath));
 		
 		return destinationFilePath;

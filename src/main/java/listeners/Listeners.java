@@ -15,7 +15,7 @@ import utilities.ExtentReporter;
 
 public class Listeners extends Base implements ITestListener {
 	
-	public String concatinate = ".";
+	
 	ExtentReports extentReport = ExtentReporter.getExtentReport();
 	ExtentTest extentTest;
 	ThreadLocal<ExtentTest> extentTestThread = new ThreadLocal<ExtentTest>();
@@ -23,14 +23,14 @@ public class Listeners extends Base implements ITestListener {
 	@Override
 	public void onTestStart(ITestResult result) {
 		extentTest = extentReport.createTest(result.getName());
-		//extentTestThread.set(extentTest);
+		extentTestThread.set(extentTest);
 
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		extentTest.pass("passed");
-		//extentTestThread.get().pass("passed");
+		//extentTest.pass("passed");
+		extentTestThread.get().pass("passed");
 		System.out.println();
 		
 		WebDriver driver = null;
@@ -45,9 +45,9 @@ public class Listeners extends Base implements ITestListener {
 		
 		try {
 			String screenshotFilePath = takeScreenshot(testMethodName,driver);
-			String sccreenshotss = concatinate+screenshotFilePath;
-			//extentTestThread.get().addScreenCaptureFromPath("../reports/screenshots/twoTestPassed.png");
-			extentTest.addScreenCaptureFromPath("\\reports\\screenshots\\twoTestPassed.png");
+			//extentTest.addScreenCaptureFromPath("screenshotFilePath");
+			extentTestThread.get().addScreenCaptureFromPath("screenshotFilePath");
+			
 		} catch (IOException e) {
 			
 			e.printStackTrace();
@@ -57,8 +57,8 @@ public class Listeners extends Base implements ITestListener {
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		extentTest.fail(result.getThrowable());
-		//extentTestThread.get().fail(result.getThrowable());		
+		//extentTest.fail(result.getThrowable());
+		extentTestThread.get().fail(result.getThrowable());		
 		WebDriver driver = null;
 		
 		String testMethodName = result.getName()+"Failed";
@@ -72,11 +72,8 @@ public class Listeners extends Base implements ITestListener {
 		try {
 			String screenshotFilePath = takeScreenshot(testMethodName,driver);
 			System.out.println(screenshotFilePath);
-			String sccreenshotss = concatinate+screenshotFilePath;
-			System.out.println(sccreenshotss);
-			
-			extentTest.addScreenCaptureFromPath(sccreenshotss);
-			//extentTestThread.get().addScreenCaptureFromPath(sccreenshotss);
+			//extentTest.addScreenCaptureFromPath(screenshotFilePath);
+			extentTestThread.get().addScreenCaptureFromPath(screenshotFilePath);
 		} catch (IOException e) {
 			
 			e.printStackTrace();
