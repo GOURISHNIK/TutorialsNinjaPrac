@@ -45,9 +45,9 @@ public class Base {
 		FileInputStream fis = new FileInputStream(propPath);
 		
 		prop.load(fis);
-		String browserName = prop.getProperty("browser");
+		//String browserName = prop.getProperty("browser");
 		
-		//String browserName = System.getProperty("browser1");
+		String browserName = System.getProperty("browserN");
 		
 		
 		if(browserName.equalsIgnoreCase("chrome")) {

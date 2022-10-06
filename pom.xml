@@ -109,7 +109,7 @@
          <configuration>
          
          <systemPropertyVariables>
-                    <browserN>${DbrowserN}</browserN>
+                    <browserN>${rowserN}</browserN>
                 </systemPropertyVariables>         
          
           <suiteXmlFiles>
